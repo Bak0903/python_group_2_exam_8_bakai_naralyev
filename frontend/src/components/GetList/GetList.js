@@ -27,6 +27,7 @@ class GetList extends Component {
                                         </div>)})}
                                     </div>)
                         }
+                        else return null;
                 })}
             </div>
 

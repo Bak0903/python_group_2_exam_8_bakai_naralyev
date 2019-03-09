@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './SelectedItem.css';
-import Item from '../../components/Item/Item';
+import EditItem from '../EditItem/EditItem';
+// import Item from '../../components/Item/Item';
 import axios from 'axios';
 
 
@@ -21,16 +22,14 @@ class SelectedItem extends Component {
     }
 
     render() {
-        return (
+        if (Object.keys(this.state.selectedItem).length !== 0) {
+            return (
             <div className={'SelectedItem'}>
-                <Item
-                    title = {this.state.selectedItem.summary}
-                    description = {this.state.selectedItem.description}
-                    date = {this.state.selectedItem.due_date}
-                    time = {this.state.selectedItem.time_planned}
-                />
+                <EditItem task = {this.state.selectedItem}/>
             </div>
         );
+        }
+        else return null;
     }
 }
 

@@ -14,10 +14,24 @@ class ItemAdd extends Component {
         },
 
         alert: null,
-        submitDisabled: false
+        submitDisabled: false,
+        id: '',
     };
 
+    componentDidMount() {
+        let task = {
+            summary: this.props.task.summary,
+            description: this.props.task.description,
+            due_date: this.props.task.due_date,
+            status: this.props.task.status,
+            time_planned: this.props.task.time_planned
+        };
+        let id = this.props.task.id;
+        this.setState({task, id})
+    }
+
     updateTaskState = (fieldName, value) => {
+        console.log(this.state.task);
         this.setState(prevState => {
             let newState = {...prevState};
             let task = {...prevState.task};
@@ -46,22 +60,21 @@ class ItemAdd extends Component {
             return newState;
         });
 
-        console.log(this.state.task);
+        let x = 'tasks/' + this.state.id + '/';
+        console.log(x);
 
-
-        axios.post('tasks/', this.state.task)
+        axios.put(x, this.state.task)
             .then(response => {
                 console.log(response.data);
-                if (response.status === 201) return response.data;
-                throw new Error('Task was not created');
+                if (response.status === 200) return response.data;
+                throw new Error('Task was not edit');
             })
-
             .then(task => this.props.history.replace('/tasks/' + task.id))
             .catch(error => {
                 console.log(error);
                 this.setState(prevState => {
                     let newState = {...prevState};
-                    newState.alert = {type: 'danger', message: 'Task was not added!'};
+                    newState.alert = {type: 'danger', message: 'Task was not edit!'};
                     newState.submitDisabled = false;
                     return newState;
                 });
@@ -69,6 +82,7 @@ class ItemAdd extends Component {
     };
 
     render() {
+
         const {summary, description, due_date, time_planned} = this.state.task;
         let alert = null;
         if (this.state.alert) {
