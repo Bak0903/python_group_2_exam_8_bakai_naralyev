@@ -21,22 +21,3 @@
 .line2 {
     background: greenyellow;
 }
-
-.item {
-    margin: 5px 20px;
-    cursor: pointer;
-    background: white;
-    border-radius: 20px;
-}
-
-.item:hover {
-    background: gold;
-}
-
-.element {
-    display: block;
-}
-
-.text {
-    font-size: 12px;
-}
