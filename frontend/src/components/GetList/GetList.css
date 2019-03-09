@@ -1,0 +1,42 @@
+.list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.row {
+    width: 29%;
+}
+
+.line0 {
+    background: red;
+}
+
+.line1 {
+    background: yellow;
+}
+
+.line2 {
+    background: greenyellow;
+}
+
+.item {
+    margin: 5px 20px;
+    cursor: pointer;
+    background: white;
+    border-radius: 20px;
+}
+
+.item:hover {
+    background: gold;
+}
+
+.element {
+    display: block;
+}
+
+.text {
+    font-size: 12px;
+}
