@@ -14,7 +14,7 @@ class GetList extends Component {
                             return (
                                 <div
                                     key={i}
-                                    // onClick={() => this.props.click('SelectedMovie', item.id)}
+                                    onClick={() => this.props.click(item.id)}
                                 >
                                     <Item
                                         title = {item.summary}

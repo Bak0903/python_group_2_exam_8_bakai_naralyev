@@ -30,9 +30,9 @@ class KanbanMain extends Component {
         })
     };
 
-    purchaseContinueHandler = (pathWord, id) => {
+    purchaseContinueHandler = (id) => {
         this.props.history.push({
-            pathname: '/' + pathWord + '/' + id
+            pathname: 'tasks/' + id
         });
     };
 
@@ -47,7 +47,7 @@ class KanbanMain extends Component {
                     list={this.state.newTasks}
                     list2={this.state.inProcessTasks}
                     list3={this.state.doneTasks}
-                    // click={this.purchaseContinueHandler}
+                    click={this.purchaseContinueHandler}
                 />
             </div>
         );

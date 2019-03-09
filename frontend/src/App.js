@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import KanbanMain from './containers/KanbanMain/KanbanMain';
-// import SelectedMovie from './containers/SelectedMovie/SelectedMovie';
+import SelectedItem from './containers/SelectedItem/SelectedItem';
 
 class App extends Component {
     render() {
@@ -10,8 +10,8 @@ class App extends Component {
             <div className={'App'}>
                 <BrowserRouter>
                     <Switch>
-                        {/*<Route path="/SelectedMovie/:id" component={SelectedMovie}/>*/}
                         <Route path="/" exact component={KanbanMain}/>
+                        <Route path="/tasks/:id" component={SelectedItem}/>
                     </Switch>
                 </BrowserRouter>
             </div>
