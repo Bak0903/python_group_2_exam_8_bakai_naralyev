@@ -19,4 +19,4 @@ class Task(models.Model):
     time_planned = models.DecimalField(max_digits=10, decimal_places=1, null=True, blank=True)
 
     def __str__(self):
-        return '%s. Выполнить до %s' % (self.summary, self.due_date)
+        return '%s Выполнить до %s' % (self.summary, self.due_date)
