@@ -2,8 +2,6 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    align-items: flex-start;
-    align-content: flex-start;
 }
 
 .row {
@@ -20,4 +18,29 @@
 
 .line2 {
     background: greenyellow;
+}
+
+.line0::before {
+    content: 'Очередь';
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.line1::before {
+    content: 'В работе';
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.line2::before {
+    content: 'Сделано';
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.item:hover {
+    cursor: pointer;
+    background: gold;
 }

@@ -1,12 +1,12 @@
 .item {
     margin: 5px 20px;
     padding: 5px;
-    cursor: pointer;
     background: white;
     border-radius: 20px;
 }
 
 .item:hover {
+    cursor: pointer;
     background: gold;
 }
 

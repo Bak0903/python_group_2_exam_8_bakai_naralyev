@@ -9,7 +9,8 @@ class GetList extends Component {
 
                 {
                     Object.values(this.props).map((list, j) => {
-                        return <div className={"row line" + j} key={j}>{Object.values(list).map((item, i) => {
+                        if (Array.isArray(list)) {
+                            return <div className={"row line" + j} key={j}>{Object.values(list).map((item, i) => {
                             let shortString = item.description.substring(0,255) + '...';
                             return (
                                 <div
@@ -25,6 +26,7 @@ class GetList extends Component {
                                 </div>)
                             }
                         )}</div>
+                        }
                 })}
             </div>
 
