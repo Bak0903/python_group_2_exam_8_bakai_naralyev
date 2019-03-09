@@ -3,6 +3,12 @@ from api_v.serializers import TaskSerializer
 from rest_framework import viewsets
 
 
-class TaskViewSet(viewsets.ModelViewSet):
+class NoAuthModelViewSet(viewsets.ModelViewSet):
+    authentication_classes = []
+
+
+class TaskViewSet(NoAuthModelViewSet):
     queryset = Task.objects.all().order_by('due_date')
     serializer_class = TaskSerializer
+
+

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './SelectedItem.css';
-import GetItem from '../../components/GetItem/GetItem';
+import Item from '../../components/Item/Item';
 import axios from 'axios';
 
 
@@ -23,8 +23,11 @@ class SelectedItem extends Component {
     render() {
         return (
             <div className={'SelectedItem'}>
-                <GetItem
-                    item = {this.state.selectedItem}
+                <Item
+                    title = {this.state.selectedItem.summary}
+                    description = {this.state.selectedItem.description}
+                    date = {this.state.selectedItem.due_date}
+                    time = {this.state.selectedItem.time_planned}
                 />
             </div>
         );

@@ -1,19 +1,24 @@
-.item {
-    margin: 5px 20px;
-    padding: 5px;
-    background: white;
-    border-radius: 20px;
-}
-
-.item:hover {
-    cursor: pointer;
-    background: gold;
-}
-
 .element {
     display: block;
 }
 
 .text {
+    color: darkslategrey;
     font-size: 12px;
+}
+
+.title {
+    color: black;
+    font-size: 18px;
+}
+
+.data {
+    color: darkred;
+    text-align: right;
+}
+
+.time {
+    color: darkcyan;
+    text-align: left;
+    margin-left: 5px;
 }
